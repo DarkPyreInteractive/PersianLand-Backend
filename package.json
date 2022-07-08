@@ -1,0 +1,39 @@
+{
+  "name": "persianland",
+  "version": "1.0.0",
+  "description": "persianland backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "cors": "^2.8.5",
+    "dateformat": "^5.0.3",
+    "errorhandler": "^1.5.1",
+    "express": "^4.18.1",
+    "express-fileupload": "^1.4.0",
+    "jquery": "^3.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.2",
+    "nodemailer": "^6.7.6",
+    "nodemon": "^2.0.18",
+    "path": "^0.12.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragonking00729/persianland.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dragonking00729/persianland/issues"
+  },
+  "homepage": "https://github.com/dragonking00729/persianland#readme"
+}
