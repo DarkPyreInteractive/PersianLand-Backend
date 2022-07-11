@@ -1,11 +1,12 @@
 const db = require('../models')
 const jwt = require('jsonwebtoken')
 const nodemailer = require('nodemailer')
-const config = require('../config/config')
 const sgMail = require('@sendgrid/mail')
+const dotenv = require('dotenv')
 
-sgMail.setApiKey('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')
+dotenv.config()
 
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const mUser = db.user
 
@@ -107,7 +108,7 @@ exports.userSignup = async(req, res) => {
 
 			return res.status(200).send({
 				status: 'fail',
-				message: 'Your account is not verified. Check you email.'
+				message: 'Your account is not verified. Check your email.'
 			})
 		}
 	}
@@ -212,7 +213,7 @@ exports.userVerify = async(req, res) => {
 		})
 	}
 
-	const new_token = jwt.sign({data: user._id}, config.common.jwt_secret, {expiresIn: config.common.jwt_expire})
+	const new_token = jwt.sign({data: user._id}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE})
 
 	user.isEmailVerified = true
 	user.status = 2	//email verified
@@ -398,7 +399,7 @@ exports.userLogin = async(req, res) => {
 		})
 	}
 
-	const new_token = jwt.sign({data: user_data._id}, config.common.jwt_secret, {expiresIn: config.common.jwt_expire})
+	const new_token = jwt.sign({data: user_data._id}, process.env.JWT_SECRET, {expiresIn: process.env.JWT_EXPIRE})
 
 	user_data.token = new_token
 	await user_data.save()

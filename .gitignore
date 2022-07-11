@@ -105,3 +105,4 @@ dist
 
 document/
 package-lock.json
+sendgrid.env

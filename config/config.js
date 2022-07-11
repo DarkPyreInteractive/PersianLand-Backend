@@ -11,10 +11,6 @@ var config = {
     host: '127.0.0.1',
     port: 27017,
     db: 'perianland_db'
-  },
-  common: {
-    jwt_secret: "csgoclubggjwttokenfetyuhgbcase45w368w3q",
-    jwt_expire: "5d",
   }
 };
 
